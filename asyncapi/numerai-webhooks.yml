@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tournament.numer.ai (introspection) + https://docs.numer.ai/tournament/compute
+spec_type: Webhooks
+summary: >-
+  Numerai supports outbound webhooks for Compute / Prediction Nodes. A user registers a webhook URL
+  for a model; Numerai invokes that URL each round so the user's cloud node computes and uploads a
+  submission automatically. There is no inbound event-subscription (AsyncAPI) surface — the direction
+  is Numerai -> user compute node.
+webhooks:
+  - name: model-round-trigger
+    direction: numerai-to-user
+    trigger: New tournament round opens
+    registration_mutation: setSubmissionWebhook
+    manual_trigger_mutation: triggerModelWebhook
+    description: Registered webhook (typically an AWS/Azure endpoint deployed by numerai-cli) is called so the Prediction Node runs the model and submits predictions.
+  - name: compute-pickle-trigger
+    direction: numerai-to-user
+    registration_mutation: triggerComputePickleUpload
+    description: Triggers upload/execution of a pickled model for hosted compute.
+related_operations:
+  - setSubmissionWebhook
+  - triggerModelWebhook
+  - triggerComputePickleUpload
+  - triggerLogs
+  - pipelineStatus
+notes: Prediction Node deployment and webhook wiring are managed by the official numerai-cli (see cli/numerai-cli.yml).

@@ -1,0 +1,3 @@
+Contact: mailto:security@numer.ai
+Expires: 2300-01-01T00:00:00Z
+Policy: https://docs.numer.ai/numerai-tournament/bounties

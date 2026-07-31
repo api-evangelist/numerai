@@ -1,0 +1,31 @@
+# Numerai
+
+> Numerai is a hedge fund that runs a crowdsourced data-science tournament: participants download
+> obfuscated financial datasets, train machine-learning models, and submit predictions each round,
+> staking the NMR cryptocurrency on their models to earn payouts. Programmatic access is a single
+> GraphQL API at api-tournament.numer.ai covering Numerai Classic, Numerai Signals, and Crypto Signals.
+
+## API
+- [GraphQL API](https://api-tournament.numer.ai): Single POST endpoint (Elixir/Absinthe), introspection enabled. Auth via API token pair (x-public-id / x-secret-key) with per-token scopes.
+- [Documentation](https://docs.numer.ai): Tournament rules, data, submissions, staking, and automation guides.
+
+## Specs & Artifacts
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/numerai/refs/heads/main/authentication/numerai-authentication.yml)
+- [OAuth/Token Scopes](https://raw.githubusercontent.com/api-evangelist/numerai/refs/heads/main/scopes/numerai-scopes.yml): 8 token scopes (upload_submission, download_submission, stake, web3_staking, read/write user info, delete).
+- [Rate Limits](https://raw.githubusercontent.com/api-evangelist/numerai/refs/heads/main/rate-limits/numerai-rate-limits.yml): 150 published per-operation limits (graphqlRateLimits).
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/numerai/refs/heads/main/conventions/numerai-conventions.yml)
+- [Webhooks](https://raw.githubusercontent.com/api-evangelist/numerai/refs/heads/main/asyncapi/numerai-webhooks.yml): Compute/Prediction-Node round triggers.
+- [Data Model](https://raw.githubusercontent.com/api-evangelist/numerai/refs/heads/main/data-model/numerai-data-model.yml)
+
+## SDKs & CLI
+- [numerapi (Python)](https://pypi.org/project/numerapi/): Docs-recommended client + CLI for datasets and submissions.
+- [numerai-cli (Python)](https://pypi.org/project/numerai-cli/): Official CLI to deploy cloud Prediction Nodes.
+- [numerai-tools (Python)](https://pypi.org/project/numerai-tools/): Official scoring/interaction tools.
+
+## Docs
+- [Getting Started](https://docs.numer.ai/tournament/learn)
+- [Documentation](https://docs.numer.ai)
+- [Bounties / Security](https://docs.numer.ai/numerai-tournament/bounties)
+- [Status](https://numerai.statuspage.io)
+- [GitHub](https://github.com/numerai)
+- [Forum](https://forum.numer.ai)

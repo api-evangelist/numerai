@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: derived
+source: https://api-tournament.numer.ai (live GraphQL introspection)
+entities:
+  - name: Account
+    description: A Numerai user account (balances, profile, payouts, API tokens).
+    key_operations: [account, accountProfile, apiTokenInfo, apiTokenScopes]
+  - name: Model
+    description: A named model submitting to a tournament; owns submissions and an optional compute webhook.
+    key_operations: [model, addModel, renameModel, archiveModel, setSubmissionWebhook]
+  - name: Submission
+    description: A per-round prediction upload for a model (Tournament or Signals).
+    key_operations: [submissions, createSubmission, createSignalsSubmission, submissionScores]
+  - name: Round
+    description: A tournament round with open/close/resolve timing and datasets.
+    key_operations: [rounds, roundDetails, listDatasets, dataset]
+  - name: Tournament
+    description: A tournament configuration (Classic, Signals, Crypto Signals).
+    key_operations: [tournaments, tournamentOverview]
+  - name: Stake
+    description: NMR staked on a model, on-chain (web3) or legacy.
+    key_operations: [stakeTransactions, increaseStake, releaseStake, v3StakeConfig]
+  - name: ApiToken
+    description: Public-id/secret-key token pair carrying a set of scopes.
+    key_operations: [defaultApiToken, createApiToken, revokeApiToken, apiTokenScopes]
+  - name: Leaderboard
+    description: Ranked model performance across a tournament.
+    key_operations: [v2Leaderboard, signalsLeaderboard, cryptosignalsLeaderboard]
+relationships:
+  - from: Account
+    to: Model
+    type: has_many
+    via: models
+  - from: Model
+    to: Submission
+    type: has_many
+    via: submissions
+  - from: Submission
+    to: Round
+    type: belongs_to
+    via: roundNumber
+  - from: Round
+    to: Tournament
+    type: belongs_to
+    via: tournament
+  - from: Model
+    to: Stake
+    type: has_one
+    via: stake
+  - from: Account
+    to: ApiToken
+    type: has_many
+    via: apiTokens

@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/numerai/numerai-cli + https://docs.numer.ai/tournament/compute
+clis:
+  - name: numerai
+    package: numerai-cli
+    official: true
+    install:
+      - pip install numerai-cli
+    description: >-
+      Deploys and manages Numerai Prediction Nodes — cloud (AWS/Azure) compute that Numerai
+      triggers each round to run your model and submit predictions automatically.
+    command_groups:
+      - group: setup
+        commands: [setup, misc, list-constants]
+        purpose: Configure cloud provider credentials and a compute node.
+      - group: node
+        commands: [node config, node deploy, node destroy, node test, node status, node list]
+        purpose: Build, deploy, test and tear down a prediction node (Docker image on cloud infra).
+      - group: uninstall
+        commands: [uninstall]
+        purpose: Remove all cloud resources created by the CLI.
+  - name: numerapi
+    package: numerapi
+    official: false
+    install:
+      - pip install numerapi
+    description: >-
+      Community-maintained client that also exposes a CLI (invoked as `numerapi`) for dataset
+      download, submission upload, and tournament/leaderboard queries against the GraphQL API.

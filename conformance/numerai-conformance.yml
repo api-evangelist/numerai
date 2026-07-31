@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: derived
+source: https://api-tournament.numer.ai (live introspection)
+standards:
+  - id: graphql
+    conforms: true
+    evidence: Single GraphQL endpoint with introspection enabled (RootQueryType/RootMutationType, Elixir/Absinthe).
+  - id: apikey-auth
+    conforms: true
+    evidence: Public-id/secret-key token pair with a scope set (apiTokenScopes).
+  - id: oauth2
+    conforms: false
+    evidence: No oauth2/OIDC flows on the programmatic API; interactive login only.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use the GraphQL errors[] envelope, not application/problem+json.
+  - id: webhooks
+    conforms: true
+    evidence: Model/submission webhooks (setSubmissionWebhook, triggerModelWebhook).
+  - id: rate-limiting-published
+    conforms: true
+    evidence: Per-operation limits are publicly queryable via graphqlRateLimits.

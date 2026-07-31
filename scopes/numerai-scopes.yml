@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tournament.numer.ai (apiTokenScopes query, live introspection)
+docs: https://docs.numer.ai/numerai-tournament/automation/automation-legacy
+model: API token scopes (public key + secret key pair). Scopes are selected when creating an API token in Account > Settings;
+  tokens are passed as x-public-id / x-secret-key headers to the GraphQL API.
+schemes:
+- name: ApiToken
+  type: apiKey
+  in: header
+  key_headers:
+  - x-public-id
+  - x-secret-key
+  source: https://api-tournament.numer.ai
+scopes:
+- scope: write_user_info
+  description: Update account and model profile information
+- scope: upload_submission
+  description: Upload submissions and pickled models
+- scope: download_submission
+  description: Download previous submissions and pickled models.
+- scope: stake
+  description: Make stakes
+- scope: web3_staking
+  description: Manage web3 staking
+- scope: read_submission_info
+  description: View historical submission info
+- scope: read_user_info
+  description: View user info, (e.g. balance, withdrawal history)
+- scope: delete
+  description: Ability to delete your models and your account.

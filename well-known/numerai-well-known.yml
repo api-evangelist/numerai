@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+host: https://numer.ai
+documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: numerai-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+    note: host returns SPA HTML fallback (not a real OIDC document)
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    note: host returns SPA HTML fallback
+  - path: /.well-known/api-catalog
+    status: 404
+    note: host returns SPA HTML fallback
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    note: host returns SPA HTML fallback
+also_probed:
+  - host: https://api-tournament.numer.ai
+    path: /.well-known/security.txt
+    status: 200
+    note: mirrors the numer.ai security.txt

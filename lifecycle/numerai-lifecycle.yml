@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: searched
+source: https://numerai.statuspage.io + https://api-tournament.numer.ai (introspection)
+versioning:
+  scheme: field-prefix
+  note: The GraphQL schema evolves in place; newer variants ship as v2*/v3* fields alongside legacy fields (e.g. v2Leaderboard, v3StakeConfig). No URL/header API version.
+deprecation:
+  policy_url: null
+  note: No published formal deprecation/Sunset (RFC 8594) policy located; legacy GraphQL fields are retained beside v2/v3 replacements.
+sla:
+  url: null
+status_page: https://numerai.statuspage.io

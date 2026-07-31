@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://pypi.org/ + https://github.com/numerai
+packages:
+  - language: python
+    registry: pypi
+    name: numerapi
+    version: 2.23.3
+    url: https://pypi.org/project/numerapi/
+    repo: https://github.com/uuazed/numerapi
+    install: pip install numerapi
+    description: Python client and command-line interface for the Numerai machine learning tournament; wraps the api-tournament.numer.ai GraphQL API (dataset download, submission upload, model/account queries).
+    license: MIT
+    official: false
+    note: Community-maintained (uuazed) but the client recommended throughout the official Numerai documentation.
+  - language: python
+    registry: pypi
+    name: numerai-cli
+    version: 1.1.5
+    url: https://pypi.org/project/numerai-cli/
+    repo: https://github.com/numerai/numerai-cli
+    install: pip install numerai-cli
+    description: Official Numerai CLI for deploying Prediction Nodes to the cloud (AWS/Azure) that Numerai triggers each round to compute submissions.
+    author: Numer.ai
+    official: true
+  - language: python
+    registry: pypi
+    name: numerai-tools
+    url: https://pypi.org/project/numerai-tools/
+    repo: https://github.com/numerai/numerai-tools
+    install: pip install numerai-tools
+    description: Official open-source tools to interact with Numerai and score models (correlation/scoring utilities).
+    author: Numer.ai
+    official: true

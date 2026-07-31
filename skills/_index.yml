@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: generated
+api: https://api-tournament.numer.ai
+grounded_in: live GraphQL introspection (RootQueryType/RootMutationType)
+skills:
+  - file: numerai-submit-tournament-predictions.md
+    name: Download data and submit tournament predictions
+    api: https://api-tournament.numer.ai
+    operations: [listDatasets, dataset, submissionUploadAuth, createSubmission, submissionScores]
+  - file: numerai-submit-signals-predictions.md
+    name: Submit Numerai Signals predictions
+    api: https://api-tournament.numer.ai
+    operations: [submissionUploadSignalsAuth, createSignalsSubmission, signalsLeaderboard]
+  - file: numerai-automate-compute-webhook.md
+    name: Automate submissions with a Compute Prediction Node
+    api: https://api-tournament.numer.ai
+    operations: [addModel, setSubmissionWebhook, triggerModelWebhook, triggerLogs, pipelineStatus]

@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tournament.numer.ai (live introspection) + https://docs.numer.ai
+docs: https://docs.numer.ai/numerai-tournament/automation
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  model: >-
+    Numerai issues API token pairs (a public id + a secret key) scoped per token. Tokens are created
+    in Account > Settings and passed to the single GraphQL endpoint as request headers. Interactive
+    web sessions use password/MFA login and Privy/SSO, but programmatic access is exclusively the
+    public-id/secret-key token pair.
+schemes:
+  - name: ApiToken
+    type: apiKey
+    in: header
+    key_headers:
+      - x-public-id
+      - x-secret-key
+    description: Public API id + secret key pair created per model/account with a selectable scope set.
+    scopes_ref: scopes/numerai-scopes.yml
+    sources:
+      - https://api-tournament.numer.ai
+endpoint:
+  graphql: https://api-tournament.numer.ai
+  method: POST
+  content_type: application/json

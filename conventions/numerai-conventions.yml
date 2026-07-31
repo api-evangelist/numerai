@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-tournament.numer.ai (live introspection) + https://docs.numer.ai
+api_style: graphql
+endpoint:
+  url: https://api-tournament.numer.ai
+  method: POST
+  content_type: application/json
+  query_type: RootQueryType
+  mutation_type: RootMutationType
+  introspection: enabled
+  stack: Elixir / Absinthe GraphQL
+authentication:
+  style: api-key-pair
+  headers: [x-public-id, x-secret-key]
+  ref: authentication/numerai-authentication.yml
+idempotency:
+  supported: false
+  note: No documented idempotency-key mechanism; mutations are not idempotent. Submission uploads are round-scoped and replace the prior submission for that model/round.
+pagination:
+  style: argument-based
+  note: List queries (e.g. rounds, submissions, leaderboards) take limit/offset-style arguments per field; no cursor envelope standard across the schema.
+versioning:
+  style: field-prefix
+  note: Schema evolves in place; newer variants are exposed as v2*/v3* fields (e.g. v2Leaderboard, v3StakeConfig) alongside legacy fields rather than via a URL/header version.
+error_envelope:
+  style: graphql-errors
+  shape: 'JSON body with a top-level errors[] array (message + locations + path); HTTP 200 for handled GraphQL errors.'
+  ref: errors/numerai-problem-types.yml
+rate_limiting:
+  signal: per-operation limits published via the graphqlRateLimits query; throttled requests are rejected.
+  scopes: [ip, account, email, account_ip_and_request_type]
+  ref: rate-limits/numerai-rate-limits.yml
+webhooks:
+  supported: true
+  note: Model/submission webhooks — Numerai calls a user-registered Prediction Node webhook each round.
+  ref: asyncapi/numerai-webhooks.yml

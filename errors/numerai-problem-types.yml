@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: derived
+source: https://api-tournament.numer.ai (live introspection of error behavior)
+format: graphql-errors
+envelope:
+  field: errors
+  shape: 'Top-level errors[] array; each entry has message, locations[] and (optionally) path[]. HTTP 200 for handled GraphQL validation/authorization errors.'
+problems:
+  - kind: validation
+    example_message: 'Field "X" of type "[Y]" must have a selection of subfields.'
+    cause: Malformed GraphQL query (missing subfield selection, unknown field, bad argument).
+    remediation: Correct the query against the introspected schema.
+  - kind: unknown-field
+    example_message: 'Cannot query field "X" on type "Y". Did you mean "Z"?'
+    cause: Field not present on the type.
+    remediation: Use an existing field from the schema.
+  - kind: authorization
+    cause: Missing or insufficiently-scoped API token for a mutation/query that requires auth.
+    remediation: Supply x-public-id/x-secret-key headers on a token holding the required scope (see scopes/numerai-scopes.yml).
+  - kind: rate-limit
+    cause: Per-operation rate limit exceeded (see rate-limits/numerai-rate-limits.yml).
+    remediation: Back off and retry after the operation's interval window; request allowlisting for high-volume submission uploads.
