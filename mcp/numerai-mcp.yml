@@ -2,44 +2,49 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://api-tournament.numer.ai (live GraphQL introspection)
-note: >-
-  No official Numerai-hosted MCP server was found. This is a candidate tool list derived from the
+note: No official Numerai-hosted MCP server was found. This is a candidate tool list derived from the
   live GraphQL operations, mapping the marquee read/submit flows an agent would need.
 server:
   name: numerai
   transport: http
   api: https://api-tournament.numer.ai
 tools:
-  - name: list_rounds
-    description: List tournament rounds and their open/close/resolve status.
-    source_operation: graphql:query.rounds
-  - name: get_round_details
-    description: Get details for a specific tournament round.
-    source_operation: graphql:query.roundDetails
-  - name: list_datasets
-    description: List downloadable tournament datasets for the current round.
-    source_operation: graphql:query.listDatasets
-  - name: get_dataset
-    description: Resolve a dataset download URL.
-    source_operation: graphql:query.dataset
-  - name: get_leaderboard
-    description: Read the tournament leaderboard.
-    source_operation: graphql:query.v2Leaderboard
-  - name: get_model
-    description: Look up a model by name/id.
-    source_operation: graphql:query.model
-  - name: list_submissions
-    description: List a model's submissions.
-    source_operation: graphql:query.submissions
-  - name: get_submission_scores
-    description: Read scored performance for submissions.
-    source_operation: graphql:query.submissionScores
-  - name: create_submission
-    description: Upload a tournament submission for a model.
-    source_operation: graphql:mutation.createSubmission
-  - name: create_signals_submission
-    description: Upload a Numerai Signals submission.
-    source_operation: graphql:mutation.createSignalsSubmission
-  - name: set_submission_webhook
-    description: Register a Compute/Prediction-Node webhook for a model.
-    source_operation: graphql:mutation.setSubmissionWebhook
+- name: list_rounds
+  description: List tournament rounds and their open/close/resolve status.
+  source_operation: graphql:query.rounds
+- name: get_round_details
+  description: Get details for a specific tournament round.
+  source_operation: graphql:query.roundDetails
+- name: list_datasets
+  description: List downloadable tournament datasets for the current round.
+  source_operation: graphql:query.listDatasets
+- name: get_dataset
+  description: Resolve a dataset download URL.
+  source_operation: graphql:query.dataset
+- name: get_leaderboard
+  description: Read the tournament leaderboard.
+  source_operation: graphql:query.v2Leaderboard
+- name: get_model
+  description: Look up a model by name/id.
+  source_operation: graphql:query.model
+- name: list_submissions
+  description: List a model's submissions.
+  source_operation: graphql:query.submissions
+- name: get_submission_scores
+  description: Read scored performance for submissions.
+  source_operation: graphql:query.submissionScores
+- name: create_submission
+  description: Upload a tournament submission for a model.
+  source_operation: graphql:mutation.createSubmission
+- name: create_signals_submission
+  description: Upload a Numerai Signals submission.
+  source_operation: graphql:mutation.createSignalsSubmission
+- name: set_submission_webhook
+  description: Register a Compute/Prediction-Node webhook for a model.
+  source_operation: graphql:mutation.setSubmissionWebhook
+deployment:
+  mode: none
+  verified: derived
+  tools: 11
+  checked: '2026-08-12'
+  source: catalog MCP census
