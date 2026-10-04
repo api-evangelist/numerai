@@ -48,7 +48,7 @@ image: https://numer.ai/img/social-card.jpg
 tags:
 - Company
 - Fintech
-- Machine-Learning
+- Machine Learning
 - Data Science
 - Hedge Funds
 - GraphQL
@@ -66,6 +66,7 @@ tags_raw:
 - Quantitative Finance
 - Tournament
 - API
+- Machine-Learning
 apis:
 - name: Numerai GraphQL API
   description: >-
