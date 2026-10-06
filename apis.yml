@@ -43,7 +43,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 image: https://numer.ai/img/social-card.jpg
 tags:
 - Company
@@ -86,6 +86,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://blog.numer.ai/rss/
+  type: BlogRSS
 - type: Website
   url: https://numer.ai
 - type: DeveloperPortal
