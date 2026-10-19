@@ -34,3 +34,52 @@
     detected: '2026-10-18'
   status: not-a-workflow
   arazzo: null
+- slug: numerai-pypi
+  label: PyPI
+  partner: pypi
+  partner_name: PyPI
+  category: official SDK (Python)
+  type: register
+  channel: package-registry
+  evidence: https://pypi.org/project/numerai-cli/
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: numerai-cli
+      version: 1.1.7
+      released: '2026-10-16'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/numerai-cli/
+      repo_leg: github-org:numerai
+      publisher_leg: email:numer.ai
+      matched_by: domain
+    - name: numerai-tools
+      version: 0.7.2
+      released: '2026-09-15'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/numerai-tools/
+      repo_leg: domain:numer.ai
+      publisher_leg: email:numer.ai
+      matched_by: domain
+    - name: numerapi
+      version: 3.1.1
+      released: '2026-08-12'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/numerapi/
+      repo_leg: github-org:numerai
+      publisher_leg: email:numer.ai
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
