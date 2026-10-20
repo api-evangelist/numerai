@@ -1,35 +1,4 @@
 edges:
-- partner_name: SEC (investment adviser registration)
-  partner: null
-  partner_match: register
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://adviserinfo.sec.gov/firm/summary/282851
-  category: Investment adviser
-  contract_reference:
-    register: SEC Investment Adviser Public Disclosure (IAPD compilation feed, Form ADV Part 1A)
-    spec_file: null
-    standard: Investment Advisers Act of 1940 (SEC Form ADV)
-    role: sec-registered-investment-adviser
-    registered_name: NUMERAI GP LLC
-    business_name: NUMERAI
-    register_id: CRD 282851
-    sec_file_number: 801-123025
-    registration_status: APPROVED
-    registered_since: '2022-02-01'
-    main_office: SAN FRANCISCO, CA, United States
-    matched_domain: numer.ai
-    matched_by: domain
-    identity_source: registrant's own Form ADV Item 1.I website address (no lookup)
-    custody_of_client_assets: true
-    signal_note: 'participation only: SEC registration is not a certification; firm type, custody and office are
-      context, never counted; regulatory AUM is not recorded (breadth is not credit)'
-    detected_by: sweep-asset-management.py
-    detected: '2026-10-18'
-  detected_by: sweep-asset-management.py
-  first_seen: '2026-10-18'
 - partner_name: PyPI
   partner: pypi
   partner_match: register
@@ -78,6 +47,67 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: SEC (investment adviser registration)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://adviserinfo.sec.gov/firm/summary/282851
+  category: Investment adviser
+  contract_reference:
+    register: SEC Investment Adviser Public Disclosure (IAPD compilation feed, Form ADV Part 1A)
+    spec_file: null
+    standard: Investment Advisers Act of 1940 (SEC Form ADV)
+    role: sec-registered-investment-adviser
+    registered_name: NUMERAI GP LLC
+    business_name: NUMERAI
+    register_id: CRD 282851
+    sec_file_number: 801-123025
+    registration_status: APPROVED
+    registered_since: '2022-02-01'
+    main_office: SAN FRANCISCO, CA, United States
+    matched_domain: numer.ai
+    matched_by: domain
+    identity_source: registrant's own Form ADV Item 1.I website address (no lookup)
+    custody_of_client_assets: true
+    signal_note: 'participation only: SEC registration is not a certification; firm type, custody and office are
+      context, never counted; regulatory AUM is not recorded (breadth is not credit)'
+    detected_by: sweep-asset-management.py
+    detected: '2026-10-18'
+  detected_by: sweep-asset-management.py
+  first_seen: '2026-10-18'
+- partner_name: PyPI
+  partner: pypi
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official CLI (PyPI)
+  evidence: https://pypi.org/project/numerai-cli/
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public package index)
+    spec_file: null
+    packages:
+    - name: numerai-cli
+      version: 1.1.7
+      released: '2026-10-16'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/numerai-cli/
+      cli: 'PyPI name/summary: A library for deploying Numer.ai Prediction Nodes.'
+      repo_leg: github-org:numerai
+      publisher_leg: email:numer.ai
+      matched_by: domain
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  detected_by: sweep-official-clis.py
+  first_seen: '2026-10-20'
 generated: '2026-10-18'
 method: searched
 source:
@@ -85,7 +115,12 @@ source:
 - https://www.wealthbox.com/wp-json/wp/v2/integrations?per_page=100&page=1
 checked:
 - https://api.nuget.org/v3
+- https://cdn.winget.microsoft.com/cache
 - https://crates.io/api/v1
+- https://formulae.brew.sh/api/cask.json
+- https://formulae.brew.sh/api/formula.json
+- https://github.com/ScoopInstaller/Extras
+- https://github.com/ScoopInstaller/Main
 - https://proxy.golang.org
 - https://pypi.org/pypi
 - https://registry.npmjs.org
