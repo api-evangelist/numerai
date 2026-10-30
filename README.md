@@ -64,6 +64,121 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Numerai is a company surfaced as a portfolio company of union-square-ventures and added to the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting the enrichment pipeline.
+Numerai is a San Francisco hedge fund that crowdsources its stock-market trading models from a global community of data scientists. Participants download obfuscated, regularized financial datasets, train machine-learning models, and submit predictions each weekly round through a single GraphQL API at api-tournament.numer.ai. Models are staked with the Ethereum-based NMR token and earn performance-based payouts for accurate, original signals. The platform spans Numerai Classic, Numerai Signals (bring-your-own stock signals), and Crypto Signals, with official Python tooling (numerapi, numerai-cli, numerai-tools) and cloud Compute Prediction Nodes for fully automated round submissions.
 
-Backed by: union-square-ventures — https://numer.ai
+**Areas:** Company · Fintech · Machine Learning · Data Science · Hedge Funds · GraphQL · Cryptocurrency · Quantitative Finance · Tournament
+
+## Numerai on APIs.io
+
+Everything profiled for Numerai is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/numerai/](https://apis.io/providers/numerai/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Numerai GraphQL API](https://apis.io/apis/numerai/numerai-graphql-api/) — Single GraphQL endpoint (Elixir/Absinthe, introspection enabled) covering datasets, submissions, models, leaderboards, staking, and Compute webhooks for…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Numerai Webhooks](https://apis.io/asyncapis/numerai/numerai-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [numerai](https://apis.io/servers/numerai/numerai/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Numerai Authentication](https://apis.io/security/numerai/numerai-authentication/)
+- [Numerai Domain Security](https://apis.io/security/numerai/numerai-domain-security/)
+- [Numerai Vulnerability Disclosure](https://apis.io/security/numerai/numerai-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Numerai Scopes](https://apis.io/scopes/numerai/numerai-scopes/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Numerai Rate Limits](https://apis.io/rate-limits/numerai/numerai-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://numer.ai)
+- [Documentation](https://docs.numer.ai)
+- [Getting started](https://docs.numer.ai/tournament/learn)
+- [API reference](https://api-tournament.numer.ai)
+- [Sign up](https://numer.ai/signup)
+- [Support](https://forum.numer.ai)
+- [Security](https://docs.numer.ai/numerai-tournament/bounties)
+- [Terms of service](https://numer.ai/terms)
+- [Privacy policy](https://numer.ai/privacy)
+- [GitHub](https://github.com/numerai)
+- [Status](https://numerai.statuspage.io)
+
+## API Evangelist rating
+
+**Kin Score 49.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 68.4 |
+| Developer ergonomics | 63.7 |
+| Access clarity | 34.2 |
+
+**Agent readiness 23.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 37.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/numerai/](https://apis.io/providers/numerai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Numerai: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/numerai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
